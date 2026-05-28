@@ -26,15 +26,17 @@ function Dashboard() {
         setTasks([...tasks, nouvelleTache])
     }
     return (
-        <div>
-            <h1>Dashboard TaskFlow</h1>
+        <div style={{ maxWidth: '700px', margin: '0 auto', padding: '20px' }}>
+            <h1 style={{ borderBottom: '2px solid #333',paddingBottom: '10px' }}>
+                TaskFlow
+            </h1>
             <TaskForm onAddTask={handleAddTask} />
+            <h2 style={{ marginTop: '30px' }}>Mes tâches({tasks.length})</h2>
             <div>
-                {tasks.map((task) => (
-                    <TaskCard key={task.id} task={task} />
+                {tasks.map((task) => (<TaskCard key={task.id} task={task} />
                 ))}
             </div>
         </div>
-    ) 
+    )
 }
 export default Dashboard
